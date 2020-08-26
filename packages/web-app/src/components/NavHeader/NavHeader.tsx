@@ -20,11 +20,11 @@ export const NavHeader = () => {
     );
   } else {
     return (
-      <div>
+      <nav>
         <Link to={ROUTES.HOME}>Home</Link>
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-      </div>
+      </nav>
     );
   }
 };

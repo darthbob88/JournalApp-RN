@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./mvp.css";
 import { Switch, Route } from "react-router-dom";
 import { ROUTES } from "./routes";
 import { JournalComponent } from "./components/JournalForm/JournalForm";
@@ -10,7 +11,7 @@ import { NavFooter } from "./components/NavFooter/NavFooter";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <NavHeader />
       <Switch>
         <Route path={ROUTES.SIGN_IN} component={SignInForm} />
@@ -20,7 +21,7 @@ function App() {
         {/* <Route path="/config" component={ConfigPage} /> */}
       </Switch>
       <NavFooter />
-    </div>
+    </main>
   );
 }
 

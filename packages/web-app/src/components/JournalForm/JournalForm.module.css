@@ -1,0 +1,14 @@
+form.newEntry label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px dotted #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+form.newEntry textarea {
+  display: block;
+  clear: both;
+  width: 80%;
+}
