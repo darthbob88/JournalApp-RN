@@ -12,11 +12,12 @@ export const NavHeader = () => {
 
   if (AuthService.currentUser != null) {
     return (
-      <div>
+      <nav>
         <Link to={ROUTES.HOME}>Home</Link>
         <span>{loggedIn}</span>
         <SignOutButton />
-      </div>
+        <Link to={ROUTES.JOURNAL}>Full Journal</Link>
+      </nav>
     );
   } else {
     return (
@@ -24,6 +25,7 @@ export const NavHeader = () => {
         <Link to={ROUTES.HOME}>Home</Link>
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+        <Link to={ROUTES.JOURNAL}>Full Journal</Link>
       </nav>
     );
   }

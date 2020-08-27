@@ -8,6 +8,7 @@ import { SignInForm } from "./components/SignInForm/SignInForm";
 import { SignUpForm } from "./components/SignUpForm/SignUpForm";
 import { NavHeader } from "./components/NavHeader/NavHeader";
 import { NavFooter } from "./components/NavFooter/NavFooter";
+import { FullJournalComponent } from "./components/FullJournal/FullJournalComponent";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path={ROUTES.SIGN_IN} component={SignInForm} />
         <Route path={ROUTES.SIGN_UP} component={SignUpForm} />
         <Route path={ROUTES.HOME} component={JournalComponent} />
+        <Route path={ROUTES.JOURNAL} component={FullJournalComponent} />
         <Route path={ROUTES.LANDING} exact component={JournalComponent} />
         {/* <Route path="/config" component={ConfigPage} /> */}
       </Switch>

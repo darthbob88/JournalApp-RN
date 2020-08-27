@@ -8,8 +8,8 @@ export const SignOutButton = () => {
     });
   };
   return (
-    <button type="button" onClick={signOut}>
+    <a href="#" onClick={signOut}>
       Sign Out
-    </button>
+    </a>
   );
 };

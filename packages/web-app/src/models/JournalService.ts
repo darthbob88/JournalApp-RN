@@ -2,15 +2,15 @@ import { databaseRef } from "../firebase";
 import JournalEntry from "./JournalEntry";
 //TODO: Turn this into context so I can make it both automatically updated and pull it only once.
 //TODO: Turn this into a real-time watcher, so it gets automatically updated.
-//TODO: Refactor this into a common 
-export const fetchAllIdeas = async (): Promise<JournalEntry[]> => {
+//TODO: Refactor this into a common service so i can use it with both the web and phone apps.
+export const fetchAllEntries = async (): Promise<JournalEntry[]> => {
   let listOfIdeas: JournalEntry[] = [];
   const querySnapshot = await databaseRef.collection("journal").get();
   listOfIdeas = querySnapshot.docs.map(doc => doc.data() as JournalEntry);
   return listOfIdeas;
 };
 //TODO: Should this return a single idea that we append to the state, or the entire updated state?
-export const addIdea = async (newIdea: JournalEntry): Promise<JournalEntry> => {
+export const addEntry = async (newIdea: JournalEntry): Promise<JournalEntry> => {
   const docRef = await databaseRef
     .collection("journal")
     .add(newIdea);

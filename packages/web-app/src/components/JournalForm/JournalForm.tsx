@@ -1,8 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, FormEvent } from "react";
 // import { Question } from "../../model/Question";
 import styles from "./JournalForm.module.css";
 import JournalEntry from "../../models/JournalEntry";
 import { AuthContext } from "../../models/AuthService";
+import { addEntry } from "../../models/JournalService";
 
 type JournalProps = {};
 export const JournalComponent: React.FunctionComponent<JournalProps> = () => {
@@ -13,7 +14,7 @@ export const JournalComponent: React.FunctionComponent<JournalProps> = () => {
   const [gratefulFor, setGratefulFor] = useState("");
   const [tomorrow, setTomorrow] = useState("");
 
-  const submit = () => {
+  const submit = (event: FormEvent) => {
     const newEntry: JournalEntry = {
       thoughts,
       exercise,
@@ -21,6 +22,8 @@ export const JournalComponent: React.FunctionComponent<JournalProps> = () => {
       tomorrow,
       timeStamp: Date.now(),
     };
+    addEntry(newEntry);
+   event.preventDefault();
   };
   return (
     <form className={styles.newEntry}>
@@ -65,7 +68,7 @@ export const JournalComponent: React.FunctionComponent<JournalProps> = () => {
         />
       </label>
       <button
-        onClick={() => submit()}
+        onClick={(event) => submit(event)}
         disabled={AuthService.currentUser == null}
       >
         Add new journal entry
