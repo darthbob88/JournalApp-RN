@@ -1,3 +1,6 @@
+form.newEntry {
+  margin: 0 auto;
+}
 form.newEntry label {
   display: flex;
   flex-direction: column;
@@ -5,10 +8,4 @@ form.newEntry label {
   border: 1px dotted #ccc;
   margin-bottom: 1rem;
   padding: 1rem;
-}
-
-form.newEntry textarea {
-  display: block;
-  clear: both;
-  width: 80%;
 }

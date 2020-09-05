@@ -23,7 +23,7 @@ export const JournalComponent: React.FunctionComponent<JournalProps> = () => {
       timeStamp: Date.now(),
     };
     addEntry(newEntry);
-   event.preventDefault();
+    event.preventDefault();
   };
   return (
     <form className={styles.newEntry}>
